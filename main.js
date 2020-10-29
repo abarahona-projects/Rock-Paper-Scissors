@@ -1,26 +1,29 @@
 // computer selection, randomly select a number and display a selection in function of that number
 
 function computerPlay() {
-
-    function random(a, b) {
-        let num = Math.floor(Math.random() * (b - a) + a);
-        return num;
-    }
-    let ranum = random(1, 4);
-    if (ranum > 0 && ranum <= 3) {
-        if (ranum == 1) {
-            return 'rock';
-        } else if (ranum == 2) {
-            return 'paper';
-        } else if (ranum == 3) {
-            return 'scissors';
-        } else {
-            return 'Numero no determinado.';
+//Function that returns a random number between a range of two numbers.
+        function random(a, b) {
+            let num = Math.floor(Math.random() * (b - a) + a);
+            return num;
         }
-    } else {
-        return 'Numero fuera de rango.';
+//Using the random() function between 1 and 4 range to get
+//a response between rock, paper, or scisors. Theres also 
+//a checking for an error in the random() function.
+        let randomNumber = random(1, 4);
+        if (randomNumber > 0 && randomNumber <= 3) {
+            if (randomNumber == 1) {
+                return 'rock';
+            } else if (randomNumber == 2) {
+                return 'paper';
+            } else if (randomNumber == 3) {
+                return 'scissors';
+            } else {
+                return 'Numero no determinado.';
+            }
+        } else {
+            return 'Numero fuera de rango.';
+        }
     }
-}
 
 // game round and equality checker
 
