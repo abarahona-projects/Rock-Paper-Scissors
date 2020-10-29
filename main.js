@@ -15,30 +15,30 @@ function computerPlay() {
         } else if (ranum == 3) {
             return 'scissors';
         } else {
-            return 'Numero no determinado.'
+            return 'Numero no determinado.';
         }
     } else {
-        return 'Numero fuera de rango.'
+        return 'Numero fuera de rango.';
     }
 }
 
 // game round and equality checker
 
-function playRound(playerSelection, computerSelection) {
+function playRound(player1, player2) {
 
-    if (playerSelection == 'rock' && computerSelection == 'paper') {
+    if (player1 == 'rock' && player2 == 'paper') {
         return -1;
-    } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
+    } else if (player1 == 'rock' && player2 == 'scissors') {
         return 1;
-    } else if (playerSelection == 'paper' && computerSelection == 'rock') {
+    } else if (player1 == 'paper' && player2 == 'rock') {
         return 1;
-    } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+    } else if (player1 == 'paper' && player2 == 'scissors') {
         return -1;
-    } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
+    } else if (player1 == 'scissors' && player2 == 'rock') {
         return -1;
-    } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+    } else if (player1 == 'scissors' && player2 == 'paper') {
         return 1;
-    } else if (playerSelection == computerSelection) {
+    } else if (player1 == player2) {
         return 0;
     } else {
         return 'hay un error en el segundo parametro, computerPlay()';
@@ -52,12 +52,16 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let playerScore = 0, computerScore = 0;
     let jugadas = 4;
+
 // Setting the game at 5 rounds
+
     for (i = 1; i <= 5; i++) {
         let computerSelection = computerPlay();
         let playerSelection = prompt('Please enter rock, paper or scissors', '');
         let result = playRound(playerSelection, computerSelection);
+
 // adding points to each player or skipping the round
+
         if (result == 1) {
             playerScore++;
             console.log('Tienes un punto, tu puntuacion total es ' + playerScore + ', ganas con 3.');
@@ -72,7 +76,9 @@ function game() {
             ++jugadas;
             console.log('Tienes que escibir rock, paper o scissors, para que el juego funcione.');
         }
+
 // Checking for a winner of the play
+
         if (playerScore === 3 || computerScore === 3 || jugadas === 0) {
             if (playerScore === 3) {
                 alert('Has ganado rotundamente por ' + playerScore + ' puntos.');
