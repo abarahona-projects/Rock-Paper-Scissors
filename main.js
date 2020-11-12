@@ -13,10 +13,10 @@ function computerPlay() {
         } else if (randomNumber == 3) {
             return 'scissors';
         } else {
-            console.log('Numero no determinado en computerPlay().');
+            console.log('undefined number at computerPlay().');
         }
     } else {
-        console.log('Numero fuera de rango computerPlay().');
+        console.log('Out of range number at computerPlay().');
     }
 }
 
@@ -38,10 +38,10 @@ function playRound(player1, player2) {
     } else if (player1 == player2) {
         return 0;
     } else if (player1 == null || player1 == undefined || player1 == '') {
-        console.log('Error al final de playRound().');
+        console.log('Error at the end of playRound().');
     }
     else {
-        console.log('Hay un error en el segundo parametro, computerPlay()');
+        console.log('There\'s an error at the second parameter, computerPlay()');
     }
 
 }
@@ -54,8 +54,8 @@ let lastPlay = false;
 function textScore(text1, text2) {
     let player = document.querySelector('.your-score');
     let computer = document.querySelector('.computer-score');
-    player.textContent = 'Tu puntaje es: ' + text1 + ' puntos.';
-    computer.textContent = 'Puntaje de Phillip: ' + text2 + ' puntos.';
+    player.textContent = 'Your Score: ' + text1 + ' points.';
+    computer.textContent = 'Phillip Score: ' + text2 + ' points.';
 }
 
 //Adds a comment of the status of the game.
@@ -91,7 +91,7 @@ function restartGame() {
         })
         playAgain.classList.add('hidden');
         setScore();
-        addComment('Pruebate a ti mismo en esta nueva batalla.');
+        addComment('Try yourself in this new battle!!.');
     });
     playerScore = 0;
     computerScore = 0;
@@ -167,32 +167,32 @@ function game(selection) {
     if (result == 1) {
         playerScore++;
         setScore();
-        addComment('Has ganado un punto.');
+        addComment('You have win this battle!, but not the war yet...');
     } else if (result == -1) {
         computerScore++;
         setScore();
-        addComment('Has perdido, Phillip gana un punto.');
+        addComment('You loose, Phillip wins this battle but you have a chance yet.');
     } else if (result == 0) {
         setScore();
-        addComment('Empate, tienen la misma eleccion.');
+        addComment('It\' a tie, nobody wins.');
     } else {
         setScore();
-        addComment('Tienes que escibir rock, paper o scissors, para que el juego funcione.');
+        addComment('It seems like you have made somethind bad to one of the selections method at the inner game() function.');
     }
     
     if (playerScore === 3 || computerScore === 3) {
         lastPlay = true;
         if (playerScore === 3) {
             setScore();
-            addComment('Has ganado rotundamente con ' + playerScore + ' puntos.');
+            addComment('Congratulations!!, You have Win this war!!.');
             restartGame();
         } else if (computerScore === 3) {
             setScore();
-            addComment('Phillip te gano con ' + computerScore + ' puntos.');
+            addComment('Ohww gosh, Phillip has win you, but this is the revenge time!!');
             restartGame();
         } else {
-            addComment('hay un error al final de game().');
-            console.log('Error al final del bucle');
+            addComment('There\'s an error at the end of game().');
+            console.log('There\'s an error at the end of game().');
         }
     }
 }
@@ -235,7 +235,7 @@ function listener() {
         })
     });
 
-    addComment('Puedes comenzar el juego haciendo click en una opcion.')
+    addComment('You can start by clicking a button of your choice.')
 }
 
 listener();
