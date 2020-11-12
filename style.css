@@ -1,14 +1,17 @@
 body {
   margin: 0;
+  margin-bottom: 5em;
   text-align: justify;
   font-family: "Grandstander", cursive;
   background-color: rgba(0, 221, 29, 0.4);
 }
 
 section {
+  scale: 1.2;
   margin: auto;
-  margin-top: 10%;
-  width: 80%;
+  margin-top: 3%;
+  margin-bottom: 5em;
+  width: 37em;
 }
 
 h1,
@@ -25,7 +28,116 @@ p {
   margin-top: 2em;
 }
 
-.suerte {
-    text-align: center;
-    font-size: large;
+.luck {
+  text-align: center;
+  font-size: large;
 }
+
+.game {
+  scale: 1.2;
+  background-color: rgba(0, 221, 29, 0.3);
+  padding: 2em;
+  margin: auto;
+  width: 37em;
+  border: 0.08em solid black;
+  box-shadow: 0.12em 0.12em 0.4em, -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.3);
+  border-radius: 0.4em;
+}
+
+.buttons {
+  margin: auto;
+  text-align: center;
+}
+
+.buttons button {
+  border-radius: 0.7em;
+  padding: 0.3em 1em;
+  box-shadow: 0.1em 0.1em 0.4em;
+}
+
+.buttons button:hover {
+  background-color: white;
+}
+
+.buttons button:nth-child(2n) {
+  margin: 0 9em;
+}
+
+.results p {
+  margin: 0;
+  display: inline-block;
+  font-size: 1.2em;
+}
+
+.results p:nth-child(2n) {
+  margin-left: 15%;
+}
+
+.images {
+  margin: 2em 0;
+  text-align: center;
+}
+
+.images p {
+font-size: 1.2em;
+}
+
+.images img {
+  box-sizing: border-box;
+  width: 27%;
+}
+
+.images img:nth-child(2n) {
+  width: 7em;
+  margin: 0 4.5em;
+}
+
+.images img:nth-child(4n) {
+  width: 15em;
+}
+
+.showed {
+  animation-name: showed;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showed {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.messy {
+  position: relative;
+  animation-name: hidded;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 2;
+}
+
+@keyframes hidded {
+  0% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 25%;
+  }
+  100% {
+    margin-left: 0;
+  }
+
+}
+
